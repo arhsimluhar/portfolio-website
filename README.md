@@ -50,7 +50,7 @@ Manual deploy (alternative):
 - `src/components/*` — Shared layout and components
 - `src/styles.css` — Global styles (light/dark via `data-theme`)
 - `src/data.ts` — Site metadata, skills, projects, and posts
-- `posts/` — Static HTML posts (e.g., `posts/hello-world.html`)
+- `public/posts/` — Static HTML posts copied to build (e.g., `public/posts/hello-world.html`)
 
 Notes:
 - The GitHub Pages base path is set in `vite.config.ts` (`base: '/portfolio-website/'`). Update it if your repo name changes.
