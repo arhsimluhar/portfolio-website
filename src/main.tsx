@@ -5,11 +5,12 @@ import App from './App'
 import './styles.css'
 
 const root = document.getElementById('root')!
+const base = (import.meta as any).env.BASE_URL.replace(/\/$/, '')
+
 createRoot(root).render(
   <React.StrictMode>
-    <BrowserRouter basename='/portfolio-website'>
+    <BrowserRouter basename={base}>
       <App />
     </BrowserRouter>
   </React.StrictMode>
 )
-

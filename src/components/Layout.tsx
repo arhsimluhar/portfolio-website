@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
+﻿import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { SITE } from '../data'
 import SocialIcons from './SocialIcons'
@@ -46,44 +46,53 @@ export default function Layout() {
 
         <nav className="side-nav" aria-label="Primary">
           <NavLink to="/" end>Home</NavLink>
-          <a href="/#about">About</a>
-          <a href="/#skills">Skills</a>
-          <a href="/#experience">Experience</a>
-          <a href="/#featured">Projects</a>
-          <a href="/#writing">Writing</a>
-          <a href="/#contact">Contact</a>
+          <Link to="/#about">About</Link>
+          <Link to="/#skills">Skills</Link>
+          <Link to="/#experience">Experience</Link>
+          <Link to="/#featured">Projects</Link>
+          <Link to="/#writing">Writing</Link>
+          <Link to="/#contact">Contact</Link>
           <NavLink to="/projects">All Projects</NavLink>
           <NavLink to="/blog">Blog</NavLink>
           <NavLink to="/resume">Resume</NavLink>
         </nav>
 
         <div className="side-actions">
-          <button className="button" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} aria-label="Toggle dark mode">🌓 Theme</button>
-          <a className="button button--primary" href="/#contact">Contact</a>
+          <button className="button" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} aria-label="Toggle dark mode">Theme</button>
+          <Link className="button button--primary" to="/#contact">Contact</Link>
         </div>
       </aside>
 
       <header className="topbar">
-        <button className="nav-toggle" aria-label="Toggle navigation" aria-expanded={open} onClick={() => setOpen(v => !v)}>☰</button>
+        <button className="nav-toggle" aria-label="Toggle navigation" aria-expanded={open} onClick={() => setOpen(v => !v)}>Menu</button>
         <nav className={`site-nav ${open ? 'open' : ''}`} aria-label="Mobile">
           <NavLink to="/" end onClick={() => setOpen(false)}>Home</NavLink>
           <NavLink to="/projects" onClick={() => setOpen(false)}>Projects</NavLink>
           <NavLink to="/blog" onClick={() => setOpen(false)}>Blog</NavLink>
           <NavLink to="/resume" onClick={() => setOpen(false)}>Resume</NavLink>
-          <button className="icon-button" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>🌓</button>
+          <button className="icon-button" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>Theme</button>
         </nav>
       </header>
 
       <main className="content">
         <Outlet />
         <footer className="site-footer">
-          <div>© <span id="year"></span> {SITE.name} — {SITE.title}</div>
+          <div>(c) <span id="year"></span> {SITE.name} - {SITE.title}</div>
           <div className="footer-links">
-            <a href="/projects">Projects</a>
-            <a href="/blog">Blog</a>
+            <NavLink to="/projects">Projects</NavLink>
+            <NavLink to="/blog">Blog</NavLink>
           </div>
         </footer>
       </main>
     </div>
   )
 }
+
+
+
+
+
+
+
+
+

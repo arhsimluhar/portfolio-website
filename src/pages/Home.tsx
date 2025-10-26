@@ -1,4 +1,5 @@
 import { PROJECTS, POSTS } from '../data'
+import { Link } from 'react-router-dom'
 
 import { useReveal } from '../hooks/useReveal'
 import SocialIcons from '../components/SocialIcons'
@@ -15,8 +16,8 @@ export default function Home() {
           <h1>Building resilient, scalable systems that ship value.</h1>
           <p className="lead">Principal Software Engineer with deep experience in distributed systems, developer platforms, and technical leadership. I design architectures that last and teams that deliver.</p>
           <div className="hero-actions">
-            <a className="button button--primary" href="/projects">View Projects</a>
-            <a className="button" href="#contact">Get in Touch</a>
+            <Link className="button button--primary" to="/projects">View Projects</Link>
+            <Link className="button" to="/#contact">Get in Touch</Link>
           </div>
           <ul className="hero-highlights">
             <li>15+ years in backend & cloud</li>
@@ -112,8 +113,8 @@ export default function Home() {
           </li>
         </ol>
         <div className="section-cta">
-          <a className="button" href="/resume">View Resume</a>
-          <a className="button button--ghost" href="/projects">Explore Projects</a>
+          <Link className="button" to="/resume">View Resume</Link>
+          <Link className="button button--ghost" to="/projects">Explore Projects</Link>
         </div>
       </section>
 
@@ -133,24 +134,26 @@ export default function Home() {
           ))}
         </div>
         <div className="section-cta">
-          <a className="button" href="/projects">All Projects</a>
+          <Link className="button" to="/projects">All Projects</Link>
         </div>
       </section>
 
       <section id="writing" className="section reveal">
         <h2>Latest Writing</h2>
         <div className="list">
-          {latest.map(post => (
+          {latest.map(post => {
+            const href = (post.href || '#').startsWith('/') ? (import.meta.env.BASE_URL + (post.href || '#').slice(1)) : (post.href || '#')
+            return (
             <article className="post-item reveal" key={post.slug}>
-              <a href={post.href || '#'}><h3>{post.title}</h3></a>
+              <a href={href}><h3>{post.title}</h3></a>
               <div className="meta">{new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' })}</div>
               <p className="muted">{post.description}</p>
               <ul className="tag-list">{post.tags?.map(t => <li key={t}>{t}</li>)}</ul>
             </article>
-          ))}
+          )})}
         </div>
         <div className="section-cta">
-          <a className="button button--ghost" href="/blog">All Posts</a>
+          <Link className="button button--ghost" to="/blog">All Posts</Link>
         </div>
       </section>
 
