@@ -46,8 +46,16 @@ h3 { font-size: 1.1rem; color: var(--muted); font-weight: 600; }
 .identity .name { font-weight: 700; }
 .identity .role { color: var(--muted); font-size: 0.95rem; }
 .social { display: flex; gap: 10px; }
-.social a { color: var(--muted); text-decoration: none; padding: 6px; border-radius: 8px; border: 1px solid transparent; }
-.social a { display: inline-flex; align-items: center; gap: 8px; }
+.social a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
 .social a:hover { color: var(--text); border-color: var(--border); background: color-mix(in oklab, var(--panel), transparent 10%); }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 700; }
 .logo { width: 28px; height: 28px; display: inline-grid; place-items: center; border-radius: 8px; background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--primary-contrast); font-weight: 900; }
