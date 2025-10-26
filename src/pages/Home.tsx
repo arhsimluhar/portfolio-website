@@ -1,4 +1,4 @@
-import { PROJECTS, POSTS } from '../data'
+import { PROJECTS, POSTS, SKILLS, SITE } from '../data'
 import { Link } from 'react-router-dom'
 
 import { useReveal } from '../hooks/useReveal'
@@ -13,16 +13,16 @@ export default function Home() {
     <>
       <section className="hero reveal" id="top">
         <div className="hero-content">
-          <h1>Building resilient, scalable systems that ship value.</h1>
-          <p className="lead">Principal Software Engineer with deep experience in distributed systems, developer platforms, and technical leadership. I design architectures that last and teams that deliver.</p>
+          <h1>Engineering secure, scalable software that delivers.</h1>
+          <p className="lead">Principal Software Engineer with 8+ years across backend systems, distributed architectures, and cloud‑native infrastructure. I drive engineering excellence, performance, and DevSecOps adoption—mentoring teams and building systems that last.</p>
           <div className="hero-actions">
             <Link className="button button--primary" to="/projects">View Projects</Link>
             <Link className="button" to="/#contact">Get in Touch</Link>
           </div>
           <ul className="hero-highlights">
-            <li>15+ years in backend & cloud</li>
-            <li>Led 10+ mission-critical launches</li>
-            <li>OSS maintainer & conference speaker</li>
+            <li>8+ years, backend & cloud</li>
+            <li>Security champion & platform engineering</li>
+            <li>Based in {SITE.location}</li>
           </ul>
         </div>
         <div className="hero-visual" aria-hidden="true">
@@ -33,19 +33,19 @@ export default function Home() {
 
       <section id="about" className="section reveal">
         <h2>About</h2>
-        <p>I connect business goals to engineering strategy, with a bias for simple architectures, reliable operations, and strong engineering culture. I mentor senior engineers, establish technical direction, and partner cross‑functionally to ship outcomes, not just code.</p>
+        <p>I connect business goals to engineering strategy with a bias for simple architectures, reliable operations, and strong engineering culture. Proven record driving performance, cost optimization, and secure software design.</p>
         <div className="quick-cards">
           <div className="card">
             <h3>Leadership</h3>
-            <p>Technical strategy, staff+ growth, cross-functional alignment, RFCs, design reviews.</p>
+            <p>Technical direction, hiring and mentoring, cross‑functional alignment, pragmatic RFCs and design reviews.</p>
           </div>
           <div className="card">
             <h3>Architecture</h3>
-            <p>Distributed systems, event-driven design, domain modeling, API platforms.</p>
+            <p>Distributed systems, data access layers, event‑driven design, API platforms, observability.</p>
           </div>
           <div className="card">
             <h3>Delivery</h3>
-            <p>Incremental migrations, reliability SLOs, incident analysis, Platform/DevEx.</p>
+            <p>Secure SDLC, paved‑road CI/CD, incremental migrations, SLOs, root‑cause analysis.</p>
           </div>
         </div>
       </section>
@@ -54,35 +54,16 @@ export default function Home() {
         <h2>Skills</h2>
         <div className="grid-3">
           <div>
-            <h3>Core</h3>
-            <ul className="tag-list">
-              <li>System Design</li>
-              <li>Distributed Systems</li>
-              <li>APIs & Platforms</li>
-              <li>Observability</li>
-              <li>Reliability/SRE</li>
-            </ul>
+            <h3>Languages</h3>
+            <ul className="tag-list">{SKILLS.languages.map(s => <li key={s}>{s}</li>)}</ul>
           </div>
           <div>
-            <h3>Stack</h3>
-            <ul className="tag-list">
-              <li>Go</li>
-              <li>TypeScript/Node</li>
-              <li>Python</li>
-              <li>Postgres</li>
-              <li>Kafka</li>
-              <li>Redis</li>
-            </ul>
+            <h3>Cloud & DevOps</h3>
+            <ul className="tag-list">{SKILLS.cloudDevOps.map(s => <li key={s}>{s}</li>)}</ul>
           </div>
           <div>
-            <h3>Cloud</h3>
-            <ul className="tag-list">
-              <li>AWS</li>
-              <li>Kubernetes</li>
-              <li>Terraform</li>
-              <li>CI/CD</li>
-              <li>Security/Compliance</li>
-            </ul>
+            <h3>DBs & Tools</h3>
+            <ul className="tag-list">{[...SKILLS.databases, ...SKILLS.frameworksTools].map(s => <li key={s}>{s}</li>)}</ul>
           </div>
         </div>
       </section>
@@ -92,23 +73,23 @@ export default function Home() {
         <ol className="timeline">
           <li>
             <div className="timeline-item">
-              <div className="timeline-meta">2021 — Present</div>
-              <h3>Principal Engineer — Acme Corp</h3>
-              <p>Led platform modernization to event-driven architecture, reducing lead time by 40% and increasing reliability to 99.95% SLO.</p>
+              <div className="timeline-meta">Dec 2024 — Present • Autodesk, Bangalore</div>
+              <h3>Principal Software Engineer</h3>
+              <p>Lead a team of 6 engineers to deliver backend services end‑to‑end; improved release velocity by 50% and reduced security incidents by ~40% via secure SDLC and paved‑road CI/CD.</p>
             </div>
           </li>
           <li>
             <div className="timeline-item">
-              <div className="timeline-meta">2017 — 2021</div>
-              <h3>Staff Engineer — Beta Inc</h3>
-              <p>Scaled payments system to 10k TPS, introduced domain boundaries and paved road tooling.</p>
+              <div className="timeline-meta">Nov 2019 — Nov 2024 • Autodesk</div>
+              <h3>Senior Software Engineer</h3>
+              <p>Designed an internal security and license‑compliance system detecting 1M+ non‑compliant users; recovered &gt;$16M. Championed enterprise security practices.</p>
             </div>
           </li>
           <li>
             <div className="timeline-item">
-              <div className="timeline-meta">2012 — 2017</div>
-              <h3>Senior Engineer — Gamma LLC</h3>
-              <p>Built high-availability microservices on Kubernetes; mentored engineers and led incident reviews.</p>
+              <div className="timeline-meta">Jul 2016 — 2019</div>
+              <h3>Software Engineer</h3>
+              <p>Engineered detection and analytics systems; migrated legacy to modular services; improved testing and CI/CD to boost developer productivity.</p>
             </div>
           </li>
         </ol>
@@ -116,6 +97,14 @@ export default function Home() {
           <Link className="button" to="/resume">View Resume</Link>
           <Link className="button button--ghost" to="/projects">Explore Projects</Link>
         </div>
+      </section>
+
+      <section id="awards" className="section reveal">
+        <h2>Awards & Certifications</h2>
+        <ul className="list">
+          <li className="card">Applause Recognition — Autodesk: Awarded for key contributions to renewing client accounts worth $300M.</li>
+          <li className="card">Autobooks Awards — Autodesk: Recognized for leading strategic initiatives with measurable business and operational impact.</li>
+        </ul>
       </section>
 
       <section id="featured" className="section reveal">
