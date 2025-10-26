@@ -157,10 +157,10 @@ export default function Home() {
         <h2>Contact</h2>
         <p>Interested in collaborating or just want to say hi? Reach out:</p>
         <ul className="contact-list">
-          <li>Email: <a href="mailto:you@example.com">you@example.com</a></li>
-          <li>LinkedIn: <a href="#" target="_blank" rel="noopener">linkedin.com/in/your-handle</a></li>
-          <li>GitHub: <a href="#" target="_blank" rel="noopener">github.com/your-handle</a></li>
-          <li>Twitter: <a href="#" target="_blank" rel="noopener">@your-handle</a></li>
+          <li>Email: <a href="mailto:rahul.mishra2003@gmail.com">rahul.mishra2003@gmail.com</a></li>
+          <li>LinkedIn: <a href="#" target="_blank" rel="noopener">linkedin.com/in/arhsimluhar</a></li>
+          <li>GitHub: <a href="#" target="_blank" rel="noopener">github.com/arhsimluhar</a></li>
+          <li>Twitter: <a href="#" target="_blank" rel="noopener">@arhsimluhar</a></li>
         </ul>
       </section>
     </>
