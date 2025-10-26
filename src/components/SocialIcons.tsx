@@ -24,7 +24,7 @@ export default function SocialIcons({ showLabels = false, size = 18 }: Props) {
   return (
     <div className="social" role="group" aria-label="Social links">
       {links.filter(l => !!l.href).map(({ key, href, label, svg }) => (
-        <a key={key} href={href!} target="_blank" rel="noopener" aria-label={label} title={label}>
+        <a key={key} href={href!} target="_blank" rel="noopener noreferrer" aria-label={label} title={label}>
           {svg}
           {showLabels && <span className="label">{label}</span>}
         </a>
