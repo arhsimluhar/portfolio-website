@@ -1,6 +1,12 @@
 export const SITE = {
   name: 'Rahul Mishra',
   title: 'Principal Software Engineer',
+  social: {
+    email: 'rahul.mishra2003@gmail.com',
+    github: 'https://github.com/arhsimluhar',
+    linkedin: 'https://www.linkedin.com/in/arhsimluhar',
+    twitter: 'https://twitter.com/arhsimluhar',
+  },
 }
 
 export type Project = {
@@ -78,4 +84,3 @@ export const POSTS: Post[] = [
     href: '#',
   },
 ]
-
