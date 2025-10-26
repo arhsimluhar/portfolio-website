@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog — Principal Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header container">
+      <a class="brand" href="index.html"><span class="logo">⟡</span><span class="brand-text">Principal Engineer</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html#about">About</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a class="active" href="blog.html">Blog</a>
+        <a class="button button--primary" href="index.html#contact">Contact</a>
+        <button id="themeToggle" class="icon-button" aria-label="Toggle dark mode">🌓</button>
+      </nav>
+    </header>
+
+    <main class="container section">
+      <h1>Blog</h1>
+      <p class="muted">Essays on system design, leadership, and delivery.</p>
+      <div id="postList" class="post-list"></div>
+    </main>
+
+    <footer class="site-footer container">
+      <div>© <span id="year"></span> Your Name</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+      </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      renderBlogIndex();
+    </script>
+  </body>
+  </html>
+

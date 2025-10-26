@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects — Principal Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header container">
+      <a class="brand" href="index.html"><span class="logo">⟡</span><span class="brand-text">Principal Engineer</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html#about">About</a>
+        <a href="index.html#skills">Skills</a>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a class="button button--primary" href="index.html#contact">Contact</a>
+        <button id="themeToggle" class="icon-button" aria-label="Toggle dark mode">🌓</button>
+      </nav>
+    </header>
+
+    <main class="container section">
+      <h1>Projects</h1>
+      <p class="muted">Selected initiatives and systems I’ve designed and delivered.</p>
+
+      <div class="filters" role="tablist" aria-label="Project filters">
+        <button class="chip active" data-filter="all" role="tab">All</button>
+        <button class="chip" data-filter="platform" role="tab">Platform</button>
+        <button class="chip" data-filter="distributed" role="tab">Distributed</button>
+        <button class="chip" data-filter="devex" role="tab">DevEx</button>
+        <button class="chip" data-filter="data" role="tab">Data</button>
+      </div>
+
+      <div id="projectGrid" class="card-grid"></div>
+    </main>
+
+    <footer class="site-footer container">
+      <div>© <span id="year"></span> Your Name</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+      </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      renderProjectsPage();
+    </script>
+  </body>
+  </html>
+
