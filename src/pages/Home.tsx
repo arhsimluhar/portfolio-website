@@ -1,6 +1,7 @@
 import { PROJECTS, POSTS } from '../data'
 
 import { useReveal } from '../hooks/useReveal'
+import SocialIcons from '../components/SocialIcons'
 
 export default function Home() {
   useReveal()
@@ -156,12 +157,7 @@ export default function Home() {
       <section id="contact" className="section reveal">
         <h2>Contact</h2>
         <p>Interested in collaborating or just want to say hi? Reach out:</p>
-        <ul className="contact-list">
-          <li>Email: <a href="mailto:rahul.mishra2003@gmail.com">rahul.mishra2003@gmail.com</a></li>
-          <li>LinkedIn: <a href="#" target="_blank" rel="noopener">linkedin.com/in/arhsimluhar</a></li>
-          <li>GitHub: <a href="#" target="_blank" rel="noopener">github.com/arhsimluhar</a></li>
-          <li>Twitter: <a href="#" target="_blank" rel="noopener">@arhsimluhar</a></li>
-        </ul>
+        <SocialIcons showLabels />
       </section>
     </>
   )
