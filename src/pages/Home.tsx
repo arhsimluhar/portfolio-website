@@ -21,7 +21,7 @@ export default function Home() {
           </div>
           <ul className="hero-highlights">
             <li>8+ years, backend & cloud</li>
-            <li>Security champion & platform engineering</li>
+            <li>Building secure and scalable destkop and cloud systems.</li>
             <li>Based in {SITE.location}</li>
           </ul>
         </div>
