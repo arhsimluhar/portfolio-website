@@ -29,6 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
       navToggle.setAttribute('aria-expanded', String(open));
     });
   }
+
+  // Normalize Home links to the static home.html so navigation works without the React dev server
+  const brandLink = document.querySelector('a.brand');
+  if (brandLink && brandLink.getAttribute('href') === 'index.html') {
+    brandLink.setAttribute('href', 'home.html');
+  }
+  document.querySelectorAll('a[href^="index.html#"]').forEach((a) => {
+    const hash = a.getAttribute('href').slice('index.html'.length);
+    a.setAttribute('href', `home.html${hash}`);
+  });
+  document.querySelectorAll('a[href="index.html"]').forEach((a) => a.setAttribute('href', 'home.html'));
 });
 
 // Rendering helpers
@@ -125,4 +136,3 @@ window.renderFeaturedProjects = renderFeaturedProjects;
 window.renderLatestPosts = renderLatestPosts;
 window.renderProjectsPage = renderProjectsPage;
 window.renderBlogIndex = renderBlogIndex;
-

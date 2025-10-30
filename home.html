@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home — Principal Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header container">
+      <a class="brand" href="home.html"><span class="logo">🏗️</span><span class="brand-text">Principal Engineer</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav" aria-label="Primary">
+        <a class="active" href="home.html#about">About</a>
+        <a href="home.html#skills">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a class="button button--primary" href="home.html#contact">Contact</a>
+        <button id="themeToggle" class="icon-button" aria-label="Toggle dark mode">🌗</button>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="section" id="about">
+        <h1>Engineering secure, scalable software that delivers.</h1>
+        <p class="lead">Selected work, writing, and ways to get in touch.</p>
+        <div class="section-cta">
+          <a class="button button--primary" href="projects.html">View Projects</a>
+          <a class="button" href="#contact">Get in Touch</a>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <h2>Focus</h2>
+        <div class="quick-cards">
+          <div class="card"><h3>Architecture</h3><p>Distributed systems, data platforms, secure services.</p></div>
+          <div class="card"><h3>Delivery</h3><p>DevEx, paved-road CI/CD, observability, SLOs.</p></div>
+          <div class="card"><h3>Leadership</h3><p>Mentoring, pragmatic design reviews, clear execution.</p></div>
+        </div>
+      </section>
+
+      <section class="section" id="featured">
+        <h2>Featured Projects</h2>
+        <div id="featuredProjects" class="card-grid"></div>
+        <div class="section-cta"><a class="button" href="projects.html">All Projects</a></div>
+      </section>
+
+      <section class="section" id="writing">
+        <h2>Latest Writing</h2>
+        <div id="latestPosts" class="list"></div>
+        <div class="section-cta"><a class="button button--ghost" href="blog.html">All Posts</a></div>
+      </section>
+
+      <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p>Want to collaborate or say hi? Reach out on any channel.</p>
+        <ul class="tag-list">
+          <li><a href="mailto:rahul.mishra2003@gmail.com">Email</a></li>
+          <li><a href="https://github.com/arhsimluhar">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/arhsimluhar">LinkedIn</a></li>
+          <li><a href="https://twitter.com/arhsimluhar">Twitter</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <div>(c) <span id="year"></span> Rahul Mishra</div>
+      <div class="footer-links">
+        <a href="home.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+      </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      renderFeaturedProjects();
+      renderLatestPosts();
+    </script>
+  </body>
+  </html>
+
