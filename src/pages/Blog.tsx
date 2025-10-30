@@ -1,6 +1,8 @@
 import { POSTS } from '../data'
+import { useReveal } from '../hooks/useReveal'
 
 export default function Blog() {
+  useReveal()
   return (
     <section className="section reveal">
       <h1>Blog</h1>

@@ -1,6 +1,11 @@
 import { useEffect } from 'react'
 
-export function useReveal(selector = '.reveal', options: IntersectionObserverInit = { rootMargin: '0px 0px -10% 0px', threshold: 0.1 }) {
+// Re-initializable reveal-on-scroll hook. Pass `deps` to re-scan DOM when content changes.
+export function useReveal(
+  selector = '.reveal',
+  options: IntersectionObserverInit = { rootMargin: '0px 0px -10% 0px', threshold: 0.1 },
+  deps: unknown[] = [],
+) {
   useEffect(() => {
     const els = Array.from(document.querySelectorAll<HTMLElement>(selector))
     if (els.length === 0) return
@@ -15,6 +20,5 @@ export function useReveal(selector = '.reveal', options: IntersectionObserverIni
     const io = new IntersectionObserver(onIntersect, options)
     els.forEach((el) => io.observe(el))
     return () => io.disconnect()
-  }, [selector])
+  }, [selector, ...deps])
 }
-

@@ -5,5 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   // Set base for GitHub Pages repo at /portfolio-website/
   base: '/portfolio-website/',
+  // Force SPA mode even if multiple HTML files exist at project root
+  appType: 'spa',
   plugins: [react()],
 })
